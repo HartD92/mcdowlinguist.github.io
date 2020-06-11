@@ -1,0 +1,22 @@
+site:
+  name:             Michael Dow, Ph.D.
+  title:            Michael Dow
+  tagline:          Linguiste
+  desc:             Linguiste
+  # keywords:         mots, cles
+global:
+  french:           Français
+  english:          English
+main:
+  welcomeSection:
+    anchor: bienvenue
+    heading: Bienvenue sur mon site!
+    p1: Ici, vous trouverez mon blog et des informations sur moi, mes recherches et mes publications. Un peu de patience, s'il vous plaît ! Comme Montréal l'été, ce site sera en construction pendant un certain temps.
+    p2: Veuillez consulter les liens dans la barre latérale pour une courte présentation de moi-même (pour des spécialistes de même que des non-spécialistes), un CV et quelques thématiques de blog. L'icône "tags" en bas de la barre latérale réunit tous les thèmes abordés.
+    p3: Vous trouverez ci-dessous mes entrées de blog les plus récentes. Celles-ci pourraient vous intéresser si vous travaillez avec des données acoustiques ou de Twitter, ou le scriptage Praat ou R.
+pages:
+  about: Moi
+  home: Accueil
+  scripting: Scriptage
+  teaching: Enseignement
+  cv: CV

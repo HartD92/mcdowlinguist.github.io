@@ -1,0 +1,22 @@
+site:
+  name:             Michael Dow, Ph.D.
+  title:            Michael Dow
+  tagline:          Linguist
+  desc:             Linguist
+  # keywords:         example, website, amazing
+global:
+  french:           Français
+  english:          English
+main:
+  welcomeSection:
+    anchor: welcome
+    heading: Welcome to my website!
+    p1: Here you can find my blog as well as information about me, my research and my publications. Please bear with me as I set up my site &mdash; like Montreal in the summer, we'll be under construction for a while.
+    p2: In the sidebar, you can find my About page (for both specialists and non-specialists), my CV page and certain blog themes. The "tags" icon at the bottom of the sidebar gathers all blog topics in a single place.
+    p3: Below, you'll find some of my more recent blog posts. These may be of interest to you especially if you work with any of the following&#58; acoustic data, Praat scripting, R scripting and Twitter data.
+pages:
+  about: About
+  home: Home
+  scripting: Scripting
+  teaching: Teaching
+  cv: CV
