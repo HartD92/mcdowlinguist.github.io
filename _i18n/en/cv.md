@@ -1,7 +1,7 @@
 <center><h1>Michael Dow</h1>
 [PDF]
 <br><br><a href="#education">Education</a> &middot; <a href="#experience">Experience</a> &middot; <a href="#publicatons">Publications</a> &middot; <a href="#talks">Selected talks</a> &middot; <a href="#teaching">Teaching</a> &middot; <a href="#grants-awards">Grants & Awards</a> &middot; <a href="#service">Service</a><br><br>
-<p><b>Last update</b>: June 13, 2020 (more files & links to be added soon)</p></center>
+<p><b>Last update</b>: June 16, 2020</p></center>
 
 <br>
 If you have trouble finding a paper, if links are broken, or if you have any other questions, please don't hesitate to let me know!
@@ -137,7 +137,7 @@ Instructor, Indiana University Honors Program in Foreign Languages, Brest (Franc
 
 <div id="teaching">
 <h2>Teaching</h2>
-<b>Université de Montréal</b> (2014 – present)
+<b>Université de Montréal</b> (2015 – present)
 <p>Introductory phonetics and phonology (LNG1400)<br>
 Undergraduate phonology (LNG2470)<br>
 Advanced Phonology (LNG3070)<br>
@@ -173,7 +173,7 @@ Travel grant, Université de Montréal. $2,000 (CAD)</p>
 <p>Structural differences between French and Picard: Evidence from phonetics and phonology. National Science Foundation, Linguistics, Doctoral Dissertation Research. $12,449 (USD)</p>
 <b><i>2013</i></b><br>
 <p>Student Conference Travel Funds. Department of Linguistics, Indiana University. $200 (USD)<br>
-Householder Research Funds. Department of Linguistics, Indiana University. $500 USD)<br>
+Householder Research Funds. Department of Linguistics, Indiana University. $500 (USD)<br>
 Gertrude F. Weathers Fellowship. Department of French & Italian, Indiana University. $5,250 (USD)<br>
 Travel Funds. Department of French & Italian, Indiana University. $275 (USD)</p>
 <b><i>2012</i></b><br>
