@@ -53,7 +53,8 @@ I'm going to stop there before I go off in a tangent. Again, this post is just t
 I even hesitated to write this post for fear of giving credence to this kind of argument. But in the end, I wanted to show that, playing by these (harmful!) rules, dismissing the Letter based on the status of the people who signed it is not as easy as, ahem, *certain people* have made it out to be.
 
 Post-script: Some people have already compiled a further breakdown of these numbers (e.g., tenure status). I hear that info should be public soon.
-___
+* * *
+
 ## The code
 {% highlight r %}
 sign = read.csv2(text = "
