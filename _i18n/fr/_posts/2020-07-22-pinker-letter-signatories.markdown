@@ -26,15 +26,16 @@ I then generated a list of all unique text in the "Role" column and manually cla
 * Postdoctoral researchers were grouped in with data scientists and so on, unless "teaching" was indicated (in which case, they were counted as a lecturer)
 * Alums were counted as students if nothing else was indicated.
 * "Other" includes professionals within and outside of linguistics.
+* Anyone listing "lecturer" status in the UK, South Korea, Australia or New Zealand was manually changed to "professor," as the title corresponds to Assistant Professor or higher in North America. (This affected 16 peoples' classification.) Lecturers at European institutions were left off this list out of an abundance of caution.
 
-Note that this exercise was pretty weird to me. Academic rank is a strange thing, and this whole classification scheme felt a little unsavory and demeaning. Anyway. Once those roles are defined, we make a lookup dataframe and match people with their generalized roles. (I reordered the factor to make the bar graph pretty.)
+Note that this exercise felt pretty weird to me. Academic rank is a strange thing, and this whole classification scheme felt a little unsavory and demeaning. Anyway. Once those roles are defined, we make a lookup dataframe and match people with their generalized roles. (I reordered the factor to make the bar graph pretty.)
 
 Let's take a look at the values:
 
-* Student: 221
-* Professor: 157
+* Student: 220
+* Professor: 176
 * Researcher: 52
-* Lecturer: 34
+* Lecturer: 16
 * Other: 44
 
 124 names lacked a title. These were excluded from the graph. If anyone wants to look them up, have fun. 
@@ -51,6 +52,7 @@ I'm going to stop there before I go off in a tangent. Again, this post is just t
 
 I even hesitated to write this post for fear of giving credence to this kind of argument. But in the end, I wanted to show that, playing by these (harmful!) rules, dismissing the Letter based on the status of the people who signed it is not as easy as, ahem, *certain people* have made it out to be.
 
+Post-script: Some people have already compiled a further breakdown of these numbers (e.g., tenure status). I hear that info should be public soon.
 ___
 ## The code
 {% highlight r %}
@@ -734,6 +736,7 @@ prof = c("Assistant Professor",
          "Term Assistant Professor",
          "Professor and Chair, Department of Anthropology",
          "University teacher",
+         "Emeritus Professor",
          "Associate Professor Emeritus",
          "Professor and Chair",
          "Assoc Professor",
@@ -807,7 +810,6 @@ stud = c("PhD student",
          "Grad student",
          "PhD Candidate, Linguistics",
          "Undergraduate",
-         "Emeritus Professor",
          "Undergraduate Student",
          "Alum, BA Linguistics + MS Theoretical Linguistics"
 )
@@ -835,15 +837,15 @@ res = c("Postdoctoral Researcher",
 )
 
 lookup = data.frame(
-  who = c(rep("Lecturer", length(lec)), 
-  rep("Other", length(other)), 
-  rep("Professor", length(prof)), 
-  rep("Researcher", length(res)), 
-  rep("Student", length(stud))),
+  who = c(rep("Lecturer", length(lec)), rep("Other", length(other)), rep("Professor", length(prof)), rep("Researcher", length(res)), rep("Student", length(stud))),
   role = c(lec,other,prof,res,stud)
 )
 
 sign$who = lookup$who[match(sign$V3, lookup$role)]
+
+revise = c(111, 156, 161, 176, 290, 302, 304, 379, 334, 462, 444, 499, 524, 588, 617, 632)
+
+sign[revise,]$who = "Professor"
 
 sign = within(sign, who <- factor(who, levels=names(sort(table(who), decreasing=TRUE))))
 
@@ -855,6 +857,5 @@ ggplot(sign[complete.cases(sign$who),], aes(x=who, fill=who)) +
   axis.title = element_blank(),
   legend.position = "none",
   plot.title = element_text(hjust = 0.5)
-) + scale_y_continuous(limits = c(0, length(which(sign$who=="Student"))+10)) + 
-ggtitle("Who signed the Pinker letter?")
+) + scale_y_continuous(limits = c(0, length(which(sign$who=="Student"))+10)) + ggtitle("Who signed the Pinker letter?")
 {% endhighlight %}
