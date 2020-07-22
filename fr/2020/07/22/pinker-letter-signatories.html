@@ -260,17 +260,18 @@
   <li>Postdoctoral researchers were grouped in with data scientists and so on, unless “teaching” was indicated (in which case, they were counted as a lecturer)</li>
   <li>Alums were counted as students if nothing else was indicated.</li>
   <li>“Other” includes professionals within and outside of linguistics.</li>
+  <li>Anyone listing “lecturer” status in the UK, South Korea, Australia or New Zealand was manually changed to “professor,” as the title corresponds to Assistant Professor or higher in North America. (This affected 16 peoples’ classification.) Lecturers at European institutions were left off this list out of an abundance of caution.</li>
 </ul>
 
-<p>Note that this exercise was pretty weird to me. Academic rank is a strange thing, and this whole classification scheme felt a little unsavory and demeaning. Anyway. Once those roles are defined, we make a lookup dataframe and match people with their generalized roles. (I reordered the factor to make the bar graph pretty.)</p>
+<p>Note that this exercise felt pretty weird to me. Academic rank is a strange thing, and this whole classification scheme felt a little unsavory and demeaning. Anyway. Once those roles are defined, we make a lookup dataframe and match people with their generalized roles. (I reordered the factor to make the bar graph pretty.)</p>
 
 <p>Let’s take a look at the values:</p>
 
 <ul>
-  <li>Student: 221</li>
-  <li>Professor: 157</li>
+  <li>Student: 220</li>
+  <li>Professor: 176</li>
   <li>Researcher: 52</li>
-  <li>Lecturer: 34</li>
+  <li>Lecturer: 16</li>
   <li>Other: 44</li>
 </ul>
 
@@ -288,7 +289,8 @@
 
 <p>I even hesitated to write this post for fear of giving credence to this kind of argument. But in the end, I wanted to show that, playing by these (harmful!) rules, dismissing the Letter based on the status of the people who signed it is not as easy as, ahem, <em>certain people</em> have made it out to be.</p>
 
-<hr />
+<p>Post-script: Some people have already compiled a further breakdown of these numbers (e.g., tenure status). I hear that info should be public soon.
+___</p>
 <h2 id="the-code">The code</h2>
 
 <figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">read.csv2</span><span class="p">(</span><span class="n">text</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"
@@ -971,6 +973,7 @@ Zweig, Eytan;University of York;Lecturer
          </span><span class="s2">"Term Assistant Professor"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Professor and Chair, Department of Anthropology"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"University teacher"</span><span class="p">,</span><span class="w">
+         </span><span class="s2">"Emeritus Professor"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Associate Professor Emeritus"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Professor and Chair"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Assoc Professor"</span><span class="p">,</span><span class="w">
@@ -1044,7 +1047,6 @@ Zweig, Eytan;University of York;Lecturer
          </span><span class="s2">"Grad student"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"PhD Candidate, Linguistics"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Undergraduate"</span><span class="p">,</span><span class="w">
-         </span><span class="s2">"Emeritus Professor"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Undergraduate Student"</span><span class="p">,</span><span class="w">
          </span><span class="s2">"Alum, BA Linguistics + MS Theoretical Linguistics"</span><span class="w">
 </span><span class="p">)</span><span class="w">
@@ -1072,15 +1074,15 @@ Zweig, Eytan;University of York;Lecturer
 </span><span class="p">)</span><span class="w">
 
 </span><span class="n">lookup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">data.frame</span><span class="p">(</span><span class="w">
-  </span><span class="n">who</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Lecturer"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">lec</span><span class="p">)),</span><span class="w"> 
-  </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Other"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">other</span><span class="p">)),</span><span class="w"> 
-  </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Professor"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">prof</span><span class="p">)),</span><span class="w"> 
-  </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Researcher"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">res</span><span class="p">)),</span><span class="w"> 
-  </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Student"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">stud</span><span class="p">))),</span><span class="w">
+  </span><span class="n">who</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Lecturer"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">lec</span><span class="p">)),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Other"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">other</span><span class="p">)),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Professor"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">prof</span><span class="p">)),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Researcher"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">res</span><span class="p">)),</span><span class="w"> </span><span class="nf">rep</span><span class="p">(</span><span class="s2">"Student"</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">stud</span><span class="p">))),</span><span class="w">
   </span><span class="n">role</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="n">lec</span><span class="p">,</span><span class="n">other</span><span class="p">,</span><span class="n">prof</span><span class="p">,</span><span class="n">res</span><span class="p">,</span><span class="n">stud</span><span class="p">)</span><span class="w">
 </span><span class="p">)</span><span class="w">
 
 </span><span class="n">sign</span><span class="o">$</span><span class="n">who</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">lookup</span><span class="o">$</span><span class="n">who</span><span class="p">[</span><span class="n">match</span><span class="p">(</span><span class="n">sign</span><span class="o">$</span><span class="n">V3</span><span class="p">,</span><span class="w"> </span><span class="n">lookup</span><span class="o">$</span><span class="n">role</span><span class="p">)]</span><span class="w">
+
+</span><span class="n">revise</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">111</span><span class="p">,</span><span class="w"> </span><span class="m">156</span><span class="p">,</span><span class="w"> </span><span class="m">161</span><span class="p">,</span><span class="w"> </span><span class="m">176</span><span class="p">,</span><span class="w"> </span><span class="m">290</span><span class="p">,</span><span class="w"> </span><span class="m">302</span><span class="p">,</span><span class="w"> </span><span class="m">304</span><span class="p">,</span><span class="w"> </span><span class="m">379</span><span class="p">,</span><span class="w"> </span><span class="m">334</span><span class="p">,</span><span class="w"> </span><span class="m">462</span><span class="p">,</span><span class="w"> </span><span class="m">444</span><span class="p">,</span><span class="w"> </span><span class="m">499</span><span class="p">,</span><span class="w"> </span><span class="m">524</span><span class="p">,</span><span class="w"> </span><span class="m">588</span><span class="p">,</span><span class="w"> </span><span class="m">617</span><span class="p">,</span><span class="w"> </span><span class="m">632</span><span class="p">)</span><span class="w">
+
+</span><span class="n">sign</span><span class="p">[</span><span class="n">revise</span><span class="p">,]</span><span class="o">$</span><span class="n">who</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"Professor"</span><span class="w">
 
 </span><span class="n">sign</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">within</span><span class="p">(</span><span class="n">sign</span><span class="p">,</span><span class="w"> </span><span class="n">who</span><span class="w"> </span><span class="o">&lt;-</span><span class="w"> </span><span class="n">factor</span><span class="p">(</span><span class="n">who</span><span class="p">,</span><span class="w"> </span><span class="n">levels</span><span class="o">=</span><span class="nf">names</span><span class="p">(</span><span class="n">sort</span><span class="p">(</span><span class="n">table</span><span class="p">(</span><span class="n">who</span><span class="p">),</span><span class="w"> </span><span class="n">decreasing</span><span class="o">=</span><span class="kc">TRUE</span><span class="p">))))</span><span class="w">
 
@@ -1092,8 +1094,7 @@ Zweig, Eytan;University of York;Lecturer
   </span><span class="n">axis.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_blank</span><span class="p">(),</span><span class="w">
   </span><span class="n">legend.position</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">"none"</span><span class="p">,</span><span class="w">
   </span><span class="n">plot.title</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">element_text</span><span class="p">(</span><span class="n">hjust</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">0.5</span><span class="p">)</span><span class="w">
-</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_y_continuous</span><span class="p">(</span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">sign</span><span class="o">$</span><span class="n">who</span><span class="o">==</span><span class="s2">"Student"</span><span class="p">))</span><span class="m">+10</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> 
-</span><span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Who signed the Pinker letter?"</span><span class="p">)</span></code></pre></figure>
+</span><span class="p">)</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">scale_y_continuous</span><span class="p">(</span><span class="n">limits</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="w"> </span><span class="nf">length</span><span class="p">(</span><span class="n">which</span><span class="p">(</span><span class="n">sign</span><span class="o">$</span><span class="n">who</span><span class="o">==</span><span class="s2">"Student"</span><span class="p">))</span><span class="m">+10</span><span class="p">))</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="n">ggtitle</span><span class="p">(</span><span class="s2">"Who signed the Pinker letter?"</span><span class="p">)</span></code></pre></figure>
 
     
 
