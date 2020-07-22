@@ -6,11 +6,11 @@ date:   2020-07-22 11:15:00 -0400
 tags: linguistics
 ---
 
-I hate feeling compelled to do this, but here we are. tl;dr: I ran some quick 'n dirty stats on the signatories of "the Pinker Letter", and it's not "just graduate students." But also: why are we doing this?
+I hate feeling compelled to do this, but here we are. **tl;dr:** I ran some quick 'n dirty stats on the signatories of "the Pinker Letter", and it's not "just graduate students." But also: why are we doing this?
 
 I won't rehash the history of the Pinker letter. I assume if you're reading this, you know what it is, and you know the controversy surrounding it. 
 
-The point of this post is pure and simple. On several occasions, in apparent efforts to discredit "the Letter," Steven Pinker has alluded to the academic status of its signatories. Most recently, on the BBC radio program "World at One" with Sarah Montague, he claimed "Most of them were graduate students and lecturers... by no means an indication of the sentiment of professional linguists."
+The point of this post is pure and simple. On several occasions, in apparent efforts to discredit "the Letter," Steven Pinker has alluded to the academic status of its signatories. Most recently, on the [BBC radio program](https://www.bbc.co.uk/programmes/m000l0jn){:target="_blank"} "World at One" with Sarah Montague, he claimed, "Most of them were graduate students and lecturers... by no means an indication of the sentiment of professional linguists."
 
 I won't go into the many ways in which I find that statement problematic. I defer to my colleagues for that one (here's [a recent example](https://medium.com/@c.moriah.green/pinker-propaganda-ii-the-re-pinkening-3d1c69e43ab2){:target="_blank"} from Dr. Caitlin Green).
 
@@ -40,7 +40,7 @@ Let's take a look at the values:
 
 124 names lacked a title. These were excluded from the graph. If anyone wants to look them up, have fun. 
 
-Here's those results in a bar graph. 
+Here are those results in a bar graph. 
 
 ![Why are we doing this](/assets/pinker_letter.png){:style="height:600px;"}
 
